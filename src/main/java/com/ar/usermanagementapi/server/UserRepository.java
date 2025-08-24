@@ -1,0 +1,14 @@
+package com.ar.usermanagementapi.server;
+
+import com.ar.usermanagementapi.api.models.User;
+
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
+
+
+    boolean existsByEmail(String email);
+}
